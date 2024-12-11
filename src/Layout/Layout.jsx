@@ -7,26 +7,26 @@ import { CiStar } from 'react-icons/ci';
 import { IoCartOutline } from 'react-icons/io5';
 import { RxExit } from 'react-icons/rx';
 
-export const Layout = ({children}) => {
-    return(
+export const Layout = ({ children }) => {
+    return (
         <div className={styles.container}>
-            <SideBar/>
+            <SideBar />
             {children}
-    
+
         </div>
     );
 
 }
 
 const SideBar = () => {
-    return(
+    return (
         <div className={styles.sideBar}>
-            <FaRegUser className={styles.sideBarIcons}/>
-            <IoIosSearch className={styles.sideBarIcons}/>
-            <img src={ForkAndKnifeIcon} alt="forkandknife" className={styles.sideBarIconImg}/>
-            <CiStar className={styles.sideBarIcons}/>
-            <IoCartOutline className={styles.sideBarIcons}/> 
-            <RxExit className={styles.sideBarIcons}/>
-        </div>  
+            <FaRegUser className={styles.sideBarIcons} />
+            <IoIosSearch className={styles.sideBarIcons} />
+            <img src={ForkAndKnifeIcon} alt="forkandknife" className={styles.sideBarIconImg} />
+            <CiStar className={styles.sideBarIcons} />
+            <IoCartOutline className={styles.sideBarIcons} />
+            <RxExit className={styles.sideBarIcons} />
+        </div>
     );
 }
