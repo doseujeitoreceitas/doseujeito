@@ -14,14 +14,19 @@
     font-weight: 700;
     font-style: normal;
     gap: .4rem;
+    cursor: pointer;
+    border: 4px solid transparent;
+    position: relative;
+    transition: .1s ease-in-out;
 }
-
+.container:hover{
+    border: 4px solid rgb(11, 145, 155);
+}
 .titulo {
     font-weight: 700;
     text-transform: uppercase;
     text-align: center;
 }
-
 .imageContainer img {
     width: 100%;
     height: 10rem;
@@ -51,4 +56,38 @@
         font-weight: 700;
         font-size: 10px;
     }
+}
+
+@media only screen and (max-width : 450px){
+    .container{
+        width: 8rem;   
+        min-width: 8.5rem;
+        height: 14rem;
+    }
+    .titulo {
+       font-size: 14px;
+
+    }
+    .imageContainer img {
+        width: 100%;
+        height: 7rem;
+    }
+    .menorPreco{
+        >span{
+            font-size: 7px;
+        }
+        >h2{
+            font-weight: 700;
+            font-size: 18px;
+        }
+    }
+    .maiorPreco{
+        >span{
+            font-size: 7px;
+        }
+        >h2{
+            font-size: 8px;
+        }
+    }
+    
 }

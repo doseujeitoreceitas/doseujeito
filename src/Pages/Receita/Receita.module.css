@@ -1,0 +1,270 @@
+.container {
+    width: calc(100vw - 5rem);
+    margin-left: 4rem;
+    max-width: 100vw;
+    padding: 4rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.receitaContainer {
+    background-color: #252525;
+    width: 50rem;
+    min-width: 50rem;
+    height: 20rem;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    border-radius: 10px;
+    font-family: "Jaldi", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    overflow: hidden;
+}
+
+#tempoPreparo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    gap: 1rem;
+
+    >span {
+        font-size: 22px;
+    }
+}
+
+#materiais {
+    font-weight: 700;
+    font-size: 20px;
+}
+
+#materiaisContainer {
+    display: flex;
+    gap: 1.5rem;
+
+    >img {
+        width: 1rem;
+    }
+}
+
+#circleMarker {
+    font-size: 12px;
+    margin-right: .3rem;
+}
+
+#materiaisList {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.descriptionContainer {
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem 2rem 1.5rem 2rem;
+    align-items: flex-start;
+    width: 100%;
+    gap: 1.5rem;
+
+    >h1 {
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 22px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.imageContainer img {
+    width: 22rem;
+    min-height: 20rem;
+    object-fit: cover;
+}
+
+.horizontalFlex {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 72rem;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.avaliacaoContainer {
+    background-color: #252525;
+    width: 20rem;
+    height: 20rem;
+    max-width: 20rem;
+    max-height: 20rem;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    font-family: "Jaldi", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-left: auto;
+}
+
+.tituloAvaliacao {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+
+    >div>h2 {
+        font-weight: 700;
+        font-size: 20px;
+    }
+}
+
+#avaliacaoStar {
+    font-size: 22px;
+}
+
+#avaliacaoTexto {
+    text-align: center;
+    padding: 0 2rem;
+}
+
+#avaliacaoFotoContainer img {
+    width: 4rem;
+    border-radius: 50px;
+}
+
+.mercadoCard {
+    background-color: #252525;
+    width: 22rem;
+    height: 10rem;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    font-family: "Jaldi", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    padding: 1rem .1rem;
+    justify-content: center;
+    align-items: center;
+}
+
+#mercadoHorizontalFlex {
+    display: flex;
+    padding: .5rem 0;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+
+#mercadoImgContainer img {
+    width: 5rem;
+    border-radius: 5px;
+}
+
+#mercadoNome {
+    font-weight: 700;
+    font-size: 20px;
+}
+
+#mercadoVerticalFlex {
+    display: flex;
+    flex-direction: column;
+
+    >span {
+        font-weight: 100;
+        font-size: 13px;
+    }
+}
+
+#distanciaMercado {
+    font-weight: 600 !important;
+    font-size: 14px !important;
+}
+
+#addToCartButton {
+    background-color: white;
+    color: black;
+    font-weight: 600;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    padding: .5rem;
+    cursor: pointer;
+    transition: .1s ease-in-out;
+
+}
+
+#addToCartButton:hover {
+    background-color: rgb(206, 206, 206);
+}
+
+#precoMercado {
+    color: #93DB86;
+    font-weight: 800;
+    text-align: center;
+    font-size: 22px;
+}
+
+#diferencialMercado {
+    margin-right: auto;
+    margin-top: .5rem;
+    margin-left: .5rem;
+}
+
+@media only screen and (max-width : 450px) {
+    .container {
+        width: 100vw;
+        max-width: 100vw;
+        margin-left: 0;
+    }
+
+    .horizontalFlex {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        max-width: 100%;
+        flex-wrap: wrap;
+        gap: 2rem;
+    }
+
+    .receitaContainer {
+        width: 30rem;
+        min-width: 30rem;
+        height: 40rem;
+        flex-direction: column;
+    }
+
+    .imageContainer img {
+        width: 100%;
+        min-height: 20rem;
+        object-fit: cover;
+    }
+
+    .descriptionContainer {
+
+        >h1 {
+            text-transform: uppercase;
+            font-weight: 700;
+            font-size: 22px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+
+    .avaliacaoContainer {
+        min-width: 122%;
+        margin-left: 0;
+    }
+    .mercadoCard {
+        min-width: 120%;
+        
+    }
+}
