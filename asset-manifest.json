@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/static/css/main.0d421baa.css",
+    "main.js": "/static/js/main.ae2a32a5.js",
+    "static/js/488.86fb1172.chunk.js": "/static/js/488.86fb1172.chunk.js",
+    "static/media/background.png": "/static/media/background.69e51e5056e212351c3c.png",
+    "static/media/LeonardoSilva.png": "/static/media/LeonardoSilva.f43827f33f0d7f7552fa.png",
+    "static/media/seupreco.png": "/static/media/seupreco.05f25abb76aa0bc74668.png",
+    "static/media/supervarejo.png": "/static/media/supervarejo.1685fe45f830f6385890.png",
+    "static/media/supermuitobom.png": "/static/media/supermuitobom.9951427a4a51442f8646.png",
+    "static/media/logo.png": "/static/media/logo.e5dca567e61d86f2f16e.png",
+    "static/media/pizzaportuguesa.jpg": "/static/media/pizzaportuguesa.120d707473900e4dcef2.jpg",
+    "static/media/ForkAndKnife.svg": "/static/media/ForkAndKnife.368217b632f0640678a39584fccabc8a.svg",
+    "static/media/logo.svg": "/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/index.html",
+    "main.0d421baa.css.map": "/static/css/main.0d421baa.css.map",
+    "main.ae2a32a5.js.map": "/static/js/main.ae2a32a5.js.map",
+    "488.86fb1172.chunk.js.map": "/static/js/488.86fb1172.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0d421baa.css",
+    "static/js/main.ae2a32a5.js"
+  ]
+}
