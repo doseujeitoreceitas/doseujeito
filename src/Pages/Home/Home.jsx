@@ -23,6 +23,9 @@ export const Home = () => {
                 <img className={styles.logo} src={logo} alt="logo" />
                 <img className={styles.ForkAndKnife} src={ForkAndKnife} alt="forkandknife" />
             </div>
+            <div className={styles.homeContainerCenter}>
+            <img id={styles.banner} src={require("../../imgs/banner.png")} alt="" />
+            
             <h1 className={styles.sliderTitle}>Receitas <span style={{ fontStyle: "italic" }}>do seu jeito</span></h1>
             <div className={styles.carouselContainer}>
                 <Swiper
@@ -31,6 +34,7 @@ export const Home = () => {
                     modules={[FreeMode]}
                     spaceBetween={8}
                     slidesPerView="auto"
+                    
                 >
                     {receitasLsit.map(r => {
                         return (
@@ -59,6 +63,7 @@ export const Home = () => {
                         )
                     })}
                 </Swiper>
+            </div>
             </div>
         </div>
     );

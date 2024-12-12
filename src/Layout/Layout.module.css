@@ -8,6 +8,7 @@
     background-clip: border-box;
     display: flex;
 }
+
 .sideBar{
     background-color: #252525;
     position: fixed;
@@ -19,12 +20,14 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 2rem;
 }
 .sideBarIcons{
     color: white;
     font-size: 34px;
     transition: .3s ease-in-out;
     cursor: pointer;
+
 }
 .sideBarIcons:hover{
     color: #cecece;
@@ -34,6 +37,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    
 }
 .sideBarIconImg{
     width: 34px;

@@ -1,9 +1,13 @@
 import { useParams } from 'react-router-dom';
 import styles from './Receita.module.css';
 import { receitasLsit } from '../../util/receitas';
+import logo from '../../imgs/logo.png';
+import ForkAndKnife from '../../imgs/ForkAndKnife.svg';
 import { TfiTimer } from 'react-icons/tfi';
-import { FaRegCircle, FaStar } from 'react-icons/fa';
+import { FaCheck, FaRegCircle, FaStar } from 'react-icons/fa';
 import { MdAddShoppingCart } from 'react-icons/md';
+import { useEffect, useRef, useState } from 'react';
+import { IoCloseCircleOutline } from 'react-icons/io5';
 
 
 export const Receita = () => {
@@ -16,10 +20,29 @@ export const Receita = () => {
     })[0];
     console.log(receita)
 
+    const [curMercado, setCurMercado] = useState([]);
+    const ingRef = useRef(null);
     const img = require(`../../imgs/${receita.imagem}`);
+
+    useEffect(() => {
+
+        ingRef.current?.scrollIntoView({
+            behavior: "smooth",
+            block: "end"
+        })
+    }, [curMercado])
+
+
+
 
     return (
         <div className={styles.container}>
+            
+            <div className={styles.header}>
+                <img className={styles.ForkAndKnife} src={ForkAndKnife} alt="forkandknife" />
+                <img className={styles.logo} src={logo} alt="logo" />
+                <img className={styles.ForkAndKnife} src={ForkAndKnife} alt="forkandknife" />
+            </div>
 
             <div className={styles.horizontalFlex}>
 
@@ -78,12 +101,16 @@ export const Receita = () => {
             </div>
 
             {/* Cards dos Mercados */}
-            <h1 style={{textAlign: "center", fontSize: "22px"}}>Escolha um estabelcimento para comprar sua receita!</h1>
+            <h1 style={{ textAlign: "center", fontSize: "22px" }}>Escolha um estabelcimento para comprar sua receita!</h1>
             <div className={styles.horizontalFlex}>
                 {receita.mercados && (receita.mercados).map(m => {
                     return (
-                        <div className={styles.mercadoCard}>
-                            <div id={styles.diferencialMercado}><FaStar/> {m.diferencial}</div>
+                        <div onClick={() => {
+                            setCurMercado(m);
+
+                        }}
+                            className={curMercado.id == m.id ? styles.mercadoCardSelected : styles.mercadoCard}>
+                            <div id={styles.diferencialMercado}><FaStar /> {m.diferencial}</div>
                             <div id={styles.mercadoHorizontalFlex}>
                                 <div id={styles.mercadoImgContainer}>
                                     <img src={m.imagem && require(`../../imgs/${m.imagem}`)} alt="" />
@@ -97,12 +124,49 @@ export const Receita = () => {
                             </div>
                             <div id={styles.mercadoHorizontalFlex}>
                                 <span id={styles.precoMercado}>R$ {m.preco}</span>
-                                <button id={styles.addToCartButton}><MdAddShoppingCart size={22}/> Adicionar ao Carrinho</button>
                             </div>
                         </div>
                     );
                 })}
             </div>
+
+            {/* Ingredientes da Receita */}
+            {(curMercado.id) &&
+                <div ref={ingRef} className={styles.ingredientesContainer}>
+                    {curMercado.ingredientes &&
+                        <>
+                            <div id={styles.ingredientTitle}>
+                                <img src={require("../../imgs/broccoli.png")} alt="" />
+                                <div id={styles.ingredientTitleFlex}>
+                                    <h1>Ingredientes</h1>
+                                    <h2>Em {curMercado.nome}</h2>
+                                </div>
+                            </div>
+                            <div className={styles.ingredientsContainer}>
+                                {curMercado.ingredientes && (curMercado.ingredientes).map(i => {
+                                    return (
+                                        <div className={styles.ingredientCard}>
+                                            <IoCloseCircleOutline onClick={() => window.alert(`Remover ${i.nome} do pedido?`)} id={styles.removeIngredient}/>
+                                            <h2>{i.nome}</h2>
+                                            <span>(utilizará {i.quantidadeUso})</span>
+                                            <div className={styles.ingredientImg}>
+                                                <img src={require(`../../imgs/${i.imagem}`)} alt="" />
+                                            </div>
+                                            <span id={styles.valorIngrediente}>{i.valor}</span>
+                                        </div>
+                                    );
+                                })}
+                            </div>
+                        </>
+                    }
+                    <div id={styles.buyContainer}>
+                        <h2>Você vai pagar:</h2>
+                        <span>R$ {curMercado.preco}</span>
+                        <button onClick={() => window.alert("Startup em desenvolvimento... Em breve você poderá receber sua receita do seu jeito no conforto da sua casa!")} id={styles.buyButton}><FaCheck /> Finalizar Pedido</button>
+                    </div>
+                </div>
+
+            }
         </div>
     );
 
